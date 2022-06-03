@@ -22,9 +22,10 @@ public class ProduitController {
     @Autowired
     ProduitService produitService;
     @RequestMapping("/showCreate")
-    public String showCreate()
+    public RedirectView showCreate()
     {
-        return "createProduit";
+        //return "createProduit";
+        return new RedirectView("http://localhost/jee/form.php");
     }
 
     @RequestMapping("/image")
@@ -141,4 +142,5 @@ public class ProduitController {
         RedirectView listerPHP = new RedirectView("http://localhost/jee/lister.php?message=" + msg);
         return listerPHP;
     }
+
 }
